@@ -25,3 +25,16 @@ models:
                   - "non identifié"
               config:
                 store_failures: true
+  - name: dim_region
+    description: Une ligne par région, avec sa population RGPH 2024.
+    columns:
+      - name: region_iso
+        data_tests:
+          - unique
+          - not_null
+      - name: region_name
+        data_tests:
+          - not_null
+      - name: population_2024
+        data_tests:
+          - not_null

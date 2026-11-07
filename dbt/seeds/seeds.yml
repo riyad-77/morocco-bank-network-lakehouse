@@ -1,0 +1,18 @@
+version: 2
+
+seeds:
+  - name: population_regions_2024
+    description: Population légale par région, RGPH 2024 (source HCP).
+    config:
+      column_types:
+        region_iso: string
+        region_name_fr: string
+        population_2024: bigint
+    columns:
+      - name: region_iso
+        data_tests:
+          - unique
+          - not_null
+      - name: population_2024
+        data_tests:
+          - not_null
