@@ -11,14 +11,15 @@ models:
       - name: institution_type
         data_tests:
           - accepted_values:
-              values:
-                - banque
-                - banque participative
-                - banque centrale
-                - transfert d'argent
-                - crédit à la consommation
-                - crédit immobilier
-                - microcrédit
-                - change
-                - assurance
-                - non identifié
+              arguments:
+                values:
+                  - "banque"
+                  - "banque participative"
+                  - "banque centrale"
+                  - "transfert d''argent"
+                  - "crédit à la consommation"
+                  - "crédit immobilier"
+                  - "microcrédit"
+                  - "change"
+                  - "assurance"
+                  - "non identifié"
