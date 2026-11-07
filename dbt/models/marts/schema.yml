@@ -10,7 +10,7 @@ models:
           - not_null
       - name: institution_type
         data_tests:
-                    - accepted_values:
+          - accepted_values:
               arguments:
                 values:
                   - "banque"
