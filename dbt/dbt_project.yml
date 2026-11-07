@@ -6,6 +6,7 @@ profile: morocco_bank_network
 model-paths: ["models"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
 
 models:
   morocco_bank_network:
