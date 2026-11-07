@@ -1,0 +1,8 @@
+snapshots:
+  - name: snap_agency
+    description: Historique SCD2 des agences, une ligne par version.
+    relation: source('lakehouse', 'silver_osm_banks')
+    config:
+      unique_key: osm_key
+      strategy: timestamp
+      updated_at: updated_at
