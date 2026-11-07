@@ -38,3 +38,35 @@ models:
       - name: population_2024
         data_tests:
           - not_null
+  - name: fact_agency
+    description: Une ligne par agence OpenStreetMap, active ou fermée.
+    columns:
+      - name: osm_key
+        data_tests:
+          - unique
+          - not_null
+      - name: bank_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_bank')
+                field: bank_sk
+      - name: region_iso
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_region')
+                field: region_iso
+
+  - name: mart_region_kpis
+    description: >
+      Indicateurs par région. bank_branches compte les banques et banques
+      participatives actives, sans la banque centrale ni les points non identifiés.
+    columns:
+      - name: region_iso
+        data_tests:
+          - unique
+          - not_null
+      - name: bank_branches_per_10k
+        data_tests:
+          - not_null
