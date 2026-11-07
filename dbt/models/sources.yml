@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: lakehouse
+    database: workspace
+    schema: bank_lakehouse
+    tables:
+      - name: silver_osm_banks
+        columns:
+          - name: osm_key
+            data_tests:
+              - unique
+              - not_null
+      - name: bronze_regions

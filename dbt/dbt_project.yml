@@ -1,0 +1,12 @@
+name: morocco_bank_network
+version: "1.0.0"
+config-version: 2
+profile: morocco_bank_network
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+
+models:
+  morocco_bank_network:
+    +materialized: table

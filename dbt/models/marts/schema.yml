@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_bank
+    description: Une ligne par établissement financier normalisé.
+    columns:
+      - name: bank_sk
+        data_tests:
+          - unique
+          - not_null
+      - name: institution_type
+        data_tests:
+          - accepted_values:
+              values:
+                - banque
+                - banque participative
+                - banque centrale
+                - transfert d'argent
+                - crédit à la consommation
+                - crédit immobilier
+                - microcrédit
+                - change
+                - assurance
+                - non identifié
