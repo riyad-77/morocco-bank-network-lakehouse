@@ -8,7 +8,7 @@ PySpark et dbt.
 **Question métier :** comment le réseau d'agences bancaires est-il réparti entre
 les 12 régions du Maroc, rapporté à leur population ?
 
-![Tableau de bord Power BI](docs/dashboard.png)
+![Tableau de bord Power BI](dashboard.png)
 
 ## Architecture
 
