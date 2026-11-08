@@ -6,23 +6,29 @@ on:
   pull_request:
 
 jobs:
-  checks:
+  python-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupérer le code
-        uses: actions/checkout@v4
-
-      - name: Installer Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Installer les outils
-        run: pip install ruff dbt-databricks==1.13.0
-
+      - name: Installer ruff
+        run: pip install ruff
       - name: Analyser le code Python
         run: ruff check .
 
+  dbt-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer dbt
+        # dbt-core 1.12 dépend d'un paquet dont le téléchargement est en panne (HTTP 504).
+        # On utilise temporairement dbt-core 1.11, compatible avec dbt-databricks 1.13.
+        run: pip install "dbt-databricks==1.13.0" "dbt-core>=1.11.2,<1.12"
       - name: Valider le projet dbt
         working-directory: dbt
         env:
