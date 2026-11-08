@@ -1,5 +1,7 @@
 # Morocco Bank Network Lakehouse
 
+![CI](https://github.com/riyad-77/morocco-bank-network-lakehouse/actions/workflows/ci.yml/badge.svg)
+
 Pipeline de données quotidien qui collecte les agences bancaires du Maroc depuis
 OpenStreetMap, les normalise, les rattache à leur région et calcule des indicateurs
 d'accès au réseau bancaire par habitant. Construit sur Databricks avec Delta Lake,
