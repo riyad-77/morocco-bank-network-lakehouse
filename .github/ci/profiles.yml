@@ -1,0 +1,11 @@
+morocco_bank_network:
+  target: ci
+  outputs:
+    ci:
+      type: databricks
+      catalog: workspace
+      schema: bank_gold
+      host: ci.example.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/ci
+      token: fake-token-for-parsing-only
+      threads: 1

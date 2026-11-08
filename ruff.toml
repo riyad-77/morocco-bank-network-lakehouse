@@ -1,0 +1,5 @@
+builtins = ["spark", "dbutils", "display"]
+
+[lint.per-file-ignores]
+"notebooks/*" = ["E402"]
+"tests/*" = ["E402"]
